@@ -1,16 +1,20 @@
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     color: #333;
 }
 
+header, footer {
+    text-align: center;
+}
+
 header {
     background: #4CAF50;
     color: #fff;
     padding: 10px 0;
-    text-align: center;
 }
 
 nav {
@@ -21,6 +25,11 @@ nav a {
     color: #fff;
     text-decoration: none;
     margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00bcd4;
 }
 
 .hero {
@@ -57,30 +66,16 @@ h2 {
 
 .project-card {
     border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px 0;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem 0;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.project-card a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.project-card a:hover {
-    text-decoration: underline;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 footer {
@@ -95,8 +90,7 @@ footer {
     flex-direction: column;
 }
 
-.contact input,
-.contact textarea {
+.contact input, .contact textarea {
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #ddd;
@@ -123,4 +117,49 @@ footer {
 .social-media a {
     color: #fff;
     margin: 0 10px;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+/* Mobile-first Styles */
+.container {
+    padding: 0 1rem;
+}
+
+header nav ul {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Media Queries for Tablets */
+@media (min-width: 768px) {
+    header nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .project-card {
+        display: inline-block;
+        width: 45%;
+        margin: 1rem;
+    }
+}
+
+/* Media Queries for Desktops */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    header nav ul {
+        justify-content: flex-end;
+    }
+
+    .project-card {
+        width: 30%;
+    }
 }
